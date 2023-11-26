@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Dashboard from './pages/dashboard';
-import About from './pages/about';
+import Customer from './pages/customer';
+import Farmer from './pages/farmer';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,8 +12,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/customer" element={<Customer />} />
+        <Route path="/farmer" element={<Farmer />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
