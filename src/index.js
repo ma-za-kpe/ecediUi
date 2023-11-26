@@ -5,13 +5,15 @@ import App from './App';
 import Customer from './pages/customer';
 import Farmer from './pages/farmer';
 import reportWebVitals from './reportWebVitals';
+import Home from './pages/home/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/customer" element={<Customer />} />
         <Route path="/farmer" element={<Farmer />} />
       </Routes>
