@@ -196,6 +196,9 @@ export default function Customer() {
     
           {/* Right Column */}
           <Grid item xs={12} md={6}>
+          <Typography variant="h6" gutterBottom align="center">
+              Activity
+            </Typography>
             <Box sx={{ p: 2 }}>
               <RequestsList crops={crops} />
             </Box>
