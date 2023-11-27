@@ -12,8 +12,6 @@ import {
   Button,
 } from '@mui/material';
 import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 
 const calculateCreditScore = (farmerInfo) => {
   // Placeholder logic for credit score calculation
