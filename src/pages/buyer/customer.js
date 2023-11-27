@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Requests from './Requests';
+import Button from '@mui/material/Button';
+import RequestsList from './RequestsList';
+import BidOrderForm from './BidOrderForm';
 
-// rename to requests
+// TODO: repetition, please remove
 const crops = [
   {
     cropName: 'Maize',
@@ -48,24 +49,48 @@ const crops = [
   // Add more crop interests as needed
 ];
 
-
-export default function Home() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-  <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-    {crops.map((crop, index) => (
-      <Grid item
-        xs={4}
-        sm={6}
-        md={4}
-        lg={3}
-        xl={2}
-        key={index}
-      >
-        <Requests crops={[crop]} />
-      </Grid>
-    ))}
-  </Grid>
-</Box>
-  );
-}
+export default function Customer() {
+    const [open, setOpen] = useState(false);
+  
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+  
+    const handlePlaceBid = (formData) => {
+      // Send a POST request with formData to http://localhost:3001/customer
+      fetch('http://localhost:3001/customer', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          // Handle any further actions after successful POST
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          // Handle errors
+        });
+    };
+  
+    return (
+      <Box sx={{ flexGrow: 1 }}>
+        <Button variant="contained" onClick={handleClickOpen} sx={{ marginBottom: 2 }}>
+          Place Bid Order
+        </Button>
+  
+        {/* BidOrderForm component for the bid order form */}
+        <BidOrderForm open={open} handleClose={handleClose} handlePlaceBid={handlePlaceBid} />
+  
+        {/* RequestsList component for the list of requests */}
+        <RequestsList crops={crops} />
+      </Box>
+    );
+  }

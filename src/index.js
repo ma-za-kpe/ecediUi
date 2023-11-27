@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Customer from './pages/customer';
+import Customer from './pages/buyer/customer';
 import Farmer from './pages/farmer';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/Home';
