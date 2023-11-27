@@ -53,13 +53,20 @@ const crops = [
 export default function Home() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-        {crops.map((crop, index) => (
-          <Grid item xs={2} sm={4} md={4} key={index}>
-            <Requests crops={[crop]} />
-          </Grid>
-        ))}
+  <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+    {crops.map((crop, index) => (
+      <Grid item
+        xs={4}
+        sm={6}
+        md={4}
+        lg={3}
+        xl={2}
+        key={index}
+      >
+        <Requests crops={[crop]} />
       </Grid>
-    </Box>
+    ))}
+  </Grid>
+</Box>
   );
 }
