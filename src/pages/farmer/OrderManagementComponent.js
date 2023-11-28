@@ -26,16 +26,21 @@ const abi = 'YOUR_CONTRACT_ABI';
 const OrderManagementComponent = () => {
   const [loading, setLoading] = useState(false);
   const [stage, setStage] = useState('BidApproval');
+  // 1
   const [bidApproved, setBidApproved] = useState(false);
   const [termsAndConditionsAgreed, setTermsAndConditionsAgreed] = useState(false);
+
+  // 2
   const [escrowSmartContractCreated, setEscrowSmartContractCreated] = useState(false);
   const [initialPaymentDeposited, setInitialPaymentDeposited] = useState(false);
-  const [proofOfQualitySubmitted, setProofOfQualitySubmitted] = useState(false);
-  const [quantityVerified, setQuantityVerified] = useState(false);
-  const [deliveryConfirmed, setDeliveryConfirmed] = useState(false);
+  const [proofOfQualitySubmitted, setProofOfQualitySubmitted] = useState(false); // remove
+  const [quantityVerified, setQuantityVerified] = useState(false); // remove
+  const [deliveryConfirmed, setDeliveryConfirmed] = useState(false); 
   const [finalPaymentReleased, setFinalPaymentReleased] = useState(false);
-  const [orderCompleted, setOrderCompleted] = useState(false);
+  const [orderCompleted, setOrderCompleted] = useState(false); 
   const [contract, setContract] = useState(null);
+
+  // 2. new action FundWallets
 
   useEffect(() => {
     // const provider = new ethers.providers.Web3Provider(window.ethereum);
