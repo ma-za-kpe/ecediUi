@@ -91,8 +91,8 @@ const Farmer = () => {
         <Grid item xs={12} md={5}>
           <Box p={2}>
             {/* Content for the right side */}
-            <h2>Right Side</h2>
-            <OrderManagementComponent />
+            <h2>Currently Approved Projects</h2>
+            {/* <OrderManagementComponent /> */}
           </Box>
         </Grid>
       </Grid>
