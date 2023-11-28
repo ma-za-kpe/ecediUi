@@ -6,7 +6,6 @@ import BidOrderForm from './BidOrderForm';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import BidResponseCard from './BidResponseCard';
-import EscrowTimeline from './EscrowTimeline';
 import ShareIcon from '@mui/icons-material/Share';
 
 
