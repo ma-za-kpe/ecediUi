@@ -17,7 +17,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 
-export default function RequestCard({ title, subheader, description, more }) {
+export default function RequestCard({ title, subheader, musthave, more }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -49,7 +49,7 @@ export default function RequestCard({ title, subheader, description, more }) {
       />
       <CardContent>
       <Typography variant="body2" color="text.secondary" sx={{ overflow: 'hidden', WebkitLineClamp: 4, display: '-webkit-box', WebkitBoxOrient: 'vertical' }}>
-          {description}
+          {musthave}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

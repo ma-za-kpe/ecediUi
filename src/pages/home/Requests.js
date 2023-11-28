@@ -14,7 +14,8 @@ const Requests = ({ crops }) => {
           title: `Interested in ${crop.cropName}`,
           subheader: `Added on ${crop.dateAdded}`,
           description: `Description: ${crop.description}`,
-          more: `More: ${crop.quantity}\nQuality: ${crop.qualityRequirements}\nDelivery Location: ${crop.deliveryLocation}`,
+          musthave: `Crop Name: ${crop.cropName}\n Crop quantity: ${crop.quantity}\Delivery Location: ${crop.deliveryLocation}\n Delivery Timeframe: ${crop.deliveryTimeframe}\n`,
+          more: `Quality: ${crop.qualityRequirements}\nDelivery Location: ${crop.deliveryLocation}`,
           // ... other props
         };
 
@@ -25,5 +26,10 @@ const Requests = ({ crops }) => {
     </div>
   );
 };
+
+// * Crop name 
+// * Quantity 
+// * Delivery location 
+// * Delivery timeframe 
 
 export default Requests;
