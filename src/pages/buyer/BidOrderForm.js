@@ -29,6 +29,11 @@ export default function BidOrderForm({ open, handleClose, handlePlaceBid }) {
   const [formErrors, setFormErrors] = useState({
     cropName: false,
     quantity: false,
+    qualityRequirements: false,
+    deliveryLocation: false,
+    deliveryTimeframe: false,
+    Price: false,
+    paymentTerms: false
     // Add more fields as needed
   });
 
@@ -39,10 +44,10 @@ export default function BidOrderForm({ open, handleClose, handlePlaceBid }) {
 
   const handlePlaceBidClick = () => {
     // Validate required fields
-    const requiredFields = ['cropName', 'quantity', 'qualityRequirements', 
-    'deliveryLocation', 'deliveryTimeframe', 'description', 'packagingPreferences', 'certifications', 'contactEmail', 'contactPhone', 'negotiationPrice',
-    'paymentTerms', 
-];
+    const requiredFields = [
+      'cropName', 'quantity', 'qualityRequirements', 'deliveryLocation', 'deliveryTimeframe', 'Price', 'paymentTerms', 
+      'description', 'packagingPreferences', 'certifications', 'contactEmail', 'contactPhone', 'negotiationPrice',
+    ];
     const newErrors = {};
 
     requiredFields.forEach((field) => {
@@ -86,37 +91,59 @@ export default function BidOrderForm({ open, handleClose, handlePlaceBid }) {
           onChange={handleChange}
           name="quantity"
         />
+
+      <TextField
+          label="Quality Requirements"
+          fullWidth
+          margin="normal"
+          error={formErrors.qualityRequirements}
+          helperText={formErrors.qualityRequirements && 'Quality Requirements is required'}
+          onChange={handleChange}
+          name="qualityRequirements"
+        />
+
+      <TextField
+          label="Delivery Location"
+          fullWidth
+          margin="normal"
+          error={formErrors.deliveryLocation}
+          helperText={formErrors.deliveryLocation && 'Delivery Location is required'}
+          onChange={handleChange}
+          name="deliveryLocation"
+        />
+
+      <TextField
+          label="Delivery Timeframe"
+          fullWidth
+          margin="normal"
+          error={formErrors.deliveryTimeframe}
+          helperText={formErrors.deliveryTimeframe && 'Delivery Timeframe is required'}
+          onChange={handleChange}
+          name="deliveryTimeframe"
+        />
+
+<TextField label="Negotiation Price" fullWidth margin="normal" onChange={handleChange}
+        error={formErrors.negotiationPrice}
+        helperText={formErrors.negotiationPrice && 'Negotiation Price is required'}
+         name="negotiationPrice" />
+
+<TextField label="Payment Terms" fullWidth margin="normal" onChange={handleChange}
+         error={formErrors.paymentTerms}
+         helperText={formErrors.paymentTerms && 'Payment Terms is required'}
+         name="paymentTerms" />
         {/* Repeat for other required fields */}
         
         {/* Optional Fields */}
         <TextField label="Description" fullWidth multiline rows={3} margin="normal" onChange={handleChange} 
-        error={formErrors.description}
-        helperText={formErrors.description && 'Description is required'}
         name="description" />
         <TextField label="Packaging Preferences" fullWidth margin="normal" onChange={handleChange}
-        error={formErrors.packagingPreferences}
-        helperText={formErrors.packagingPreferences && 'Packaging Preferences is required'}
         name="packagingPreferences" />
         <TextField label="Certifications" fullWidth margin="normal" onChange={handleChange}
-         error={formErrors.certifications}
-         helperText={formErrors.certifications && 'Certifications is required'}
           name="certifications" />
         <TextField label="Contact Email" fullWidth margin="normal" onChange={handleChange}
-         error={formErrors.contactEmail}
-         helperText={formErrors.contactEmail && 'Contact Email is required'}
          name="contactEmail" />
         <TextField label="Contact Phone" fullWidth margin="normal" onChange={handleChange} 
-         error={formErrors.contactPhone}
-         helperText={formErrors.contactPhone && 'Contact Phone is required'}
         name="contactPhone" />
-        <TextField label="Negotiation Price" fullWidth margin="normal" onChange={handleChange}
-        error={formErrors.negotiationPrice}
-        helperText={formErrors.negotiationPrice && 'Negotiation Price is required'}
-         name="negotiationPrice" />
-        <TextField label="Payment Terms" fullWidth margin="normal" onChange={handleChange}
-         error={formErrors.paymentTerms}
-         helperText={formErrors.paymentTerms && 'Payment Terms is required'}
-         name="paymentTerms" />
         <TextField label="Additional Requirements" fullWidth multiline rows={3} margin="normal" onChange={handleChange} name="additionalRequirements" />
       </DialogContent>
       <DialogActions>

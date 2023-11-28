@@ -23,7 +23,7 @@ const calculateCreditScore = (farmerInfo) => {
 };
 
 const BidResponseCard = ({ bidInfo, farmerInfo, onReject, onApprove }) => {
-  const { title, subheader, description, more } = bidInfo;
+  const { title, subheader, description, more, dateAdded } = bidInfo;
   const creditScore = calculateCreditScore(farmerInfo);
 
   return (
@@ -36,16 +36,16 @@ const BidResponseCard = ({ bidInfo, farmerInfo, onReject, onApprove }) => {
             </Avatar>
           }
           title={title}
-          subheader={subheader}
+          subheader={dateAdded}
         />
-        <CardContent>
+        {/* <CardContent>
           <Typography variant="body2" color="text.secondary" sx={{ overflow: 'hidden', WebkitLineClamp: 4, display: '-webkit-box', WebkitBoxOrient: 'vertical' }}>
             {description}
           </Typography>
           <Typography variant="body2" color="text.primary">
             {more}
           </Typography>
-        </CardContent>
+        </CardContent> */}
         <CardContent>
           <Typography variant="h6" color="text.primary">
             Farmer Information
@@ -56,10 +56,7 @@ const BidResponseCard = ({ bidInfo, farmerInfo, onReject, onApprove }) => {
               <ListItemText primary={`Name: ${farmerInfo.personalInformation.firstName} ${farmerInfo.personalInformation.lastName}`} />
             </ListItem>
             <ListItem>
-              <ListItemText primary={`Date of Birth: ${farmerInfo.personalInformation.dateOfBirth}`} />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary={`Address: ${farmerInfo.personalInformation.address}`} />
+              <ListItemText primary={`Location: ${farmerInfo.farmInformation.farmLocation}`} />
             </ListItem>
             {/* Add more farmer information as needed */}
           </List>
