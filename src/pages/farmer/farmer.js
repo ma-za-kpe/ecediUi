@@ -92,7 +92,7 @@ const Farmer = () => {
           <Box p={2}>
             {/* Content for the right side */}
             <h2>Right Side</h2>
-            {/* <OrderManagementComponent /> */}
+            <OrderManagementComponent />
           </Box>
         </Grid>
       </Grid>
