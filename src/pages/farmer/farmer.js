@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import FarmerProfileForm from './FarmerProfileForm'
+import OrderManagementComponent from './OrderManagementComponent'
 
 const Farmer = () => {
 
@@ -78,12 +79,10 @@ const Farmer = () => {
         <Grid item xs={12} md={6}>
           <Box p={2}>
             {/* Content for the left side */}
-            <h2>Left Side</h2>
             <FarmerProfileForm farmerData={farmer_profile} />
           </Box>
         </Grid>
   
-        {/* Divider with color */}
         <Grid item xs={12} md={1}>
           <Divider orientation="vertical" flexItem sx={{ backgroundColor: 'blue' }} />
         </Grid>
@@ -93,11 +92,11 @@ const Farmer = () => {
           <Box p={2}>
             {/* Content for the right side */}
             <h2>Right Side</h2>
+            {/* <OrderManagementComponent /> */}
           </Box>
         </Grid>
       </Grid>
     );
 }
 
-
-export default Farmer;
+export default Farmer

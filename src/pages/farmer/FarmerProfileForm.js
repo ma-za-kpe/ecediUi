@@ -45,6 +45,7 @@ const FarmerProfileForm = ({ farmerData }) => {
           disabled={!isEditing}
           value={formData.personalInformation.firstName}
           onChange={(e) => handleInputChange('firstName', e.target.value)}
+          sx={{ marginBottom: 2 }}
         />
         <TextField
           label="Last Name"
@@ -52,6 +53,7 @@ const FarmerProfileForm = ({ farmerData }) => {
           disabled={!isEditing}
           value={formData.personalInformation.lastName}
           onChange={(e) => handleInputChange('lastName', e.target.value)}
+          sx={{ marginBottom: 2 }}
         />
         <TextField
           label="Date of Birth"
@@ -59,6 +61,7 @@ const FarmerProfileForm = ({ farmerData }) => {
           disabled={!isEditing}
           value={formData.personalInformation.dateOfBirth}
           onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
+          sx={{ marginBottom: 2 }}
         />
         {/* Add more fields as needed */}
 
